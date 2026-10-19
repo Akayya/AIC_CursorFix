@@ -1,16 +1,18 @@
-# Build the BetterExperience Cursor Fix plugin with the .NET Framework 4 csc compiler.
-# Usage:  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force; & .\build.ps1
+# Build the CursorFix plugin with the .NET Framework 4 csc compiler.
+# Usage:  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force; & .\build.ps1 -Root "D:\path\to\AliceInCradle_ver030"
 param(
-    [string]$Root = 'D:\ZzqoQrtW_AliceInCradle Win ver030i\AliceInCradle Win ver030\AliceInCradle_ver030'
+    [string]$Root = ''
 )
 
 $ErrorActionPreference = 'Stop'
 
+if (-not $Root) { throw "Please pass the game root, e.g. -Root 'D:\Games\AliceInCradle_ver030'" }
+
 $csc = 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
 if (-not (Test-Path $csc)) { throw "csc.exe not found at $csc" }
 
-$src     = Join-Path $Root '_dev\CursorFix\CursorFix.cs'
-$out     = Join-Path $Root 'BepInEx\plugins\BetterExperienceCursorFix.dll'
+$src     = Join-Path $PSScriptRoot 'CursorFix.cs'
+$out     = Join-Path $Root 'BepInEx\plugins\CursorFix.dll'
 $managed = Join-Path $Root 'AliceInCradle_Data\Managed'
 $core    = Join-Path $Root 'BepInEx\core'
 
