@@ -1,4 +1,4 @@
-# BetterExperience Cursor Fix
+#Cursor Fix
 
 [English](README.en.md) | 简体中文
 
