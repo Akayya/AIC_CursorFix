@@ -1,4 +1,6 @@
 # BetterExperience Cursor Fix
+[English](README.en.md) | 简体中文
+
 
 爱丽丝与摇篮（Alice in Cradle）的 **BepInEx 5** 插件：按 F1 打开 BetterExperience 配置界面后，鼠标指针不再消失。
 
