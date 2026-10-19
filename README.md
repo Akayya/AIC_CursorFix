@@ -37,17 +37,19 @@
 把 `BepInEx` 文件夹解压并覆盖到游戏根目录，得到：
 
 ```
-<游戏根目录>\BepInEx\plugins\BetterExperienceCursorFix.dll
-<游戏根目录>\BepInEx\config\aic.betterexperience.cursorfix.cfg
+<游戏根目录>\BepInEx\plugins\CursorFix.dll
+<游戏根目录>\BepInEx\config\aic.cursorfix.cfg
 ```
 
 （cfg 可选，首次运行会自动生成）
+
+> **从旧文件名升级**：改名为 CursorFix 之前，文件名是 `BetterExperienceCursorFix.dll` 与 `aic.betterexperience.cursorfix.cfg`（GUID `aic.betterexperience.cursorfix`）。升级时请先删掉这两个旧文件，否则新旧版本会同时加载。
 
 启动游戏，按 F1 验证即可。也可以直接在 [Releases](../../releases) 下载打包好的 zip。
 
 ## 配置
 
-文件：`BepInEx\config\aic.betterexperience.cursorfix.cfg`
+文件：`BepInEx\config\aic.cursorfix.cfg`
 
 | 配置项 | 默认 | 说明 |
 | --- | --- | --- |
@@ -69,7 +71,7 @@ CursorFix: GUI closed (...)                                  已恢复原状态
 
 ## 卸载
 
-删除 `BepInEx\plugins\BetterExperienceCursorFix.dll` 即可。本插件不修改游戏或任何现有 mod 的 DLL，不会留下残留。
+删除 `BepInEx\plugins\CursorFix.dll` 即可。本插件不修改游戏或任何现有 mod 的 DLL，不会留下残留。
 
 ## 从源码编译
 
@@ -82,7 +84,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 .\src\build.ps1 -Root "D:\Games\AliceInCradle_ver030"
 ```
 
-构建脚本会引用 `<Root>\BepInEx\core` 下的 `BepInEx.dll` / `0Harmony.dll`，以及 `<Root>\AliceInCradle_Data\Managed` 下的 Unity 程序集，输出到 `<Root>\BepInEx\plugins\BetterExperienceCursorFix.dll`。
+构建脚本会引用 `<Root>\BepInEx\core` 下的 `BepInEx.dll` / `0Harmony.dll`，以及 `<Root>\AliceInCradle_Data\Managed` 下的 Unity 程序集，输出到 `<Root>\BepInEx\plugins\CursorFix.dll`。
 
 ## 已知无关问题
 
