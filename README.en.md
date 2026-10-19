@@ -37,15 +37,17 @@ Verified: neither `BetterExperience.dll` nor `UnityModBase.dll` contains a singl
 Extract the `BepInEx` folder over your game root so that you end up with:
 
 ```
-<game root>\BepInEx\plugins\BetterExperienceCursorFix.dll
-<game root>\BepInEx\config\aic.betterexperience.cursorfix.cfg
+<game root>\BepInEx\plugins\CursorFix.dll
+<game root>\BepInEx\config\aic.cursorfix.cfg
 ```
 
 The config file is optional — it is generated on first launch. Then start the game and press F1. A ready-to-extract zip is available on the [Releases](../../releases) page.
 
+> **Upgrading from the old file name**: before the rename, the plugin shipped as `BetterExperienceCursorFix.dll` with `aic.betterexperience.cursorfix.cfg` (GUID `aic.betterexperience.cursorfix`). Delete those two old files first, otherwise both copies load at the same time.
+
 ## Configuration
 
-File: `BepInEx\config\aic.betterexperience.cursorfix.cfg`
+File: `BepInEx\config\aic.cursorfix.cfg`
 
 | Option | Default | Description |
 | --- | --- | --- |
@@ -67,7 +69,7 @@ CursorFix: GUI closed (...)                                  original state rest
 
 ## Uninstalling
 
-Delete `BepInEx\plugins\BetterExperienceCursorFix.dll`. The plugin never modifies the game or any other mod's DLL, so nothing else is left behind.
+Delete `BepInEx\plugins\CursorFix.dll`. The plugin never modifies the game or any other mod's DLL, so nothing else is left behind.
 
 ## Building from source
 
@@ -80,7 +82,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 .\src\build.ps1 -Root "D:\Games\AliceInCradle_ver030"
 ```
 
-The script references `BepInEx.dll` / `0Harmony.dll` from `<Root>\BepInEx\core` and the Unity assemblies from `<Root>\AliceInCradle_Data\Managed`, and writes `BetterExperienceCursorFix.dll` into `<Root>\BepInEx\plugins`.
+The script references `BepInEx.dll` / `0Harmony.dll` from `<Root>\BepInEx\core` and the Unity assemblies from `<Root>\AliceInCradle_Data\Managed`, and writes `CursorFix.dll` into `<Root>\BepInEx\plugins`.
 
 ## Known unrelated issue
 
