@@ -8,7 +8,7 @@ using BepInEx.Configuration;
 using HarmonyLib;
 using UnityEngine;
 
-namespace BetterExperienceCursorFix
+namespace CursorFix
 {
     /// <summary>
     /// Keeps a usable mouse pointer while a UnityModBase / BetterExperience GUI window is open.
@@ -26,11 +26,11 @@ namespace BetterExperienceCursorFix
     /// temporary-normal-mouse mode and keep Cursor.visible / Cursor.lockState fixed. On close the
     /// game's own mode is restored (setTemporaryNormalMouse(false)), so the in-game cursor returns.
     /// </summary>
-    [BepInPlugin(Guid, "BetterExperience Cursor Fix", "1.2.0")]
+    [BepInPlugin(Guid, "CursorFix", "1.2.0")]
     [BepInDependency("com.buele.betterexperience", BepInDependency.DependencyFlags.HardDependency)]
     public class CursorFixPlugin : BaseUnityPlugin
     {
-        public const string Guid = "aic.betterexperience.cursorfix";
+        public const string Guid = "aic.cursorfix";
 
         internal static CursorFixPlugin Instance;
         internal static ConfigEntry<bool> Enabled;
